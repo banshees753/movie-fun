@@ -10,10 +10,7 @@ public class Application {
 
     @Bean
     public ServletRegistrationBean servletRegistrationBean(ActionServlet actionServlet){
-        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean();
-        servletRegistrationBean.addUrlMappings("/moviefun/*");
-        servletRegistrationBean.setServlet(actionServlet);
-        return servletRegistrationBean;
+        return new ServletRegistrationBean(actionServlet, "/moviefun/*");
     }
 
     public static void main(String[] args) {
